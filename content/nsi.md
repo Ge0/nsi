@@ -26,14 +26,25 @@ un entretien.
 
 Pour rappel, il s’agit de la suite mathématique suivante :
 
-$\forall n 	\subset \mathbb N, n > 2, U_n = U_{n-1} + U{n-2}$ avec $U_1 = U_0 = 1$
+$$\forall n \subset \mathbb N, n \geq 2, U_n = U_{n-1} + U_{n-2}$$
+
+avec : 
+
+$$U_0 = U_1 = 1$$
 
 En termes simples, il s’agit d’additionner les deux éléments précédents de la suite pour obtenir
 l’élément courant. On considère $U_0$ le premier élément de la suite (qui vaut 1) et $U_1$ le deuxième
 élément de la suite (qui vaut 1 aussi).
 
-Ainsi, $U_2 = U_1 + U_0 = 1 + 1 = 2$, puis $U_3 = U_2 + U_1 = 2 + 1 = 3$, $U_4 = U_3 + U_2 = 3 + 2 = 5$,
-etc.
+Ainsi,
+
+$U_2 = U_1 + U_0 = 1 + 1 = 2$
+
+$U_3 = U_2 + U_1 = 2 + 1 = 3$
+
+$U_4 = U_3 + U_2 = 3 + 2 = 5$
+
+Etc.
 
 On obtient donc les nombres suivants : 1, 1, 2, 3, 5, 8, 13, 21…
 
@@ -45,13 +56,13 @@ et invite à réfléchir sur les variables à utiliser.
 
 ## La factorielle
 
-En mathématique, une factionelle est une fonction unaire (ne prend qu’un seul argument) et correspond au produit de ce nombre
+En mathématique, une factorielle est une fonction unaire (ne prend qu’un seul argument) et correspond au produit de ce nombre
 par ses prédécesseurs dans les entiers naturels strictement positif. La factorielle du nombre $n$ se note $n!$ (point d’exclamation
 après le nombre).
 
 On a donc :
 
-$\forall n 	\subset \mathbb N^{\*}, !n = \prod_{i=1}^{n} i$
+$$\forall n 	\subset \mathbb N^*, n! = \prod_{i=1}^{n} i$$
 
 Cas particulier : $0! = 1$.
 
@@ -65,7 +76,7 @@ $2! = 2 \times 1 = 1$
 
 $3! = 3 \times 2 \times 1 = 1$
 
-$4! = 4\ times 3 \times 2 \times 1 = 1$
+$4! = 4 \times 3 \times 2 \times 1 = 1$
 
 L’idée est d’écrire, au même titre que la fonction Fibonnaci, une fonction qui prend en argument un nombre $n$ supérieur ou égal à 0,
 qui renvoie la factorielle de celui-ci.
@@ -80,7 +91,7 @@ $4! = 4 \times 3!= 1$
 
 On en déduit une relation de récurrence :
 
-$\forall n \subset \mathbb N^{\*}, n > 2, n! = n \times (n - 1)$
+$$\forall n \subset \mathbb N^{\*}, n > 2, n! = n \times (n - 1)!$$
 
 Ce qui veut dire que notre fonction informatique pourrait s’appeler elle-même pour connaître le résultat de la factorielle du nombre précédent.
 
@@ -112,3 +123,6 @@ Sauf que, pour connaître le résultat de `fibo(3)`, il faut calculer `fibo(2) +
 comme expliqué juste au-dessus !
 
 On se retrouve donc avec un problème de performance **désastreux**.
+
+On s’interrogera donc sur les avantages et les inconvénients de la récursivité. On parlera également de **récursivité terminale** qui
+consiste à enregistrer en mémoire un résultat déjà calculé.

@@ -1,0 +1,9 @@
+---
+title: NSI
+author: Geoffrey Royer
+lang: fr-FR
+header-includes: |
+    \usepackage{tikz}
+    \usepackage{pgfplots}
+abstract: Contenu de cours supplémentaire pour la filière NSI.
+---
